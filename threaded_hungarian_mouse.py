@@ -41,6 +41,10 @@ def _setup_opts(argv):
 
     opts = arg_parsing.setup_opts(argv, FLAGS)
 
+    # hack because it is not working
+    opts["flags"].feat_keys = []
+    opts["flags"].out_dir = "outputs/matching"
+
     # setup the feature key list. The hdf5 sampler expects each feature key
     # to be a list of sub fields. Allowing the hdf5 sampler to traverse
     # tree like hdf5 files. This isn't needed in this version of the
